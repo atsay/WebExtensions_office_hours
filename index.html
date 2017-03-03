@@ -1,0 +1,191 @@
+<html>
+<head></head>
+<body>
+
+	<h1>Support for transitioning and porting to WebExtensions</h1>
+
+	<h2>Office hours schedule</h2>
+
+	<p>WebExtensions are the new standard for add-on development in Firefox that is cross-browser compatible, allowing you to maintain one codebase for extensions that work in multiple browsers. With the release of Firefox 57 in November 2017, legacy add-ons will no longer be supported.</p>
+
+	<p>If you want to transition your Firefox legacy add-on or port a Chrome extension, we're here to help!</p>
+
+	Below is a schedule of when help is available in the #webextensions channel at <a href="https://client00.chat.mibbit.com/?url=irc%3A%2F%2Firc.mozilla.org%2Fqa" target="_blank">irc.mozilla.org</a> and in the add-on development <a href="https://discourse.mozilla-community.org/c/add-ons/development" target="_blank">forum</a>. Names are listed as IRC nicknames so you can reach those people directly. We also encourage you to join the webextensions-support [at] mozilla [dot] org <a href="https://mail.mozilla.org/listinfo/webextensions-support" target="_blank">mailing list</a> to ask questions and support other developers. <b>Times will automatically display in the time zone of your device.</b></p>
+
+	<ul>
+	<li>Documentation on <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Porting_a_Google_Chrome_extension" target="_blank">porting a Chrome extension</a></li>
+	<li>Documentation on <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Porting_a_legacy_Firefox_add-on" target="_blank">migrating a Firefox legacy extension</a></li>
+	<li><a href="https://wiki.mozilla.org/Add-ons/developer/communication" target="_blank">More resources</a></li>
+	</ul>
+
+	<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart', 'timeline']}]}"></script>
+
+	<h2>Mondays</h2>
+	<div id="chart_div_mon"></div>
+
+	<h2>Tuesdays</h2>
+	<div id="chart_div_tue"></div>
+
+	<h2>Wednesdays</h2>
+	<div id="chart_div_wed"></div>
+
+	<h2>Thursdays</h2>
+	<div id="chart_div_thu"></div>
+
+	<h2>Fridays</h2>
+	<div id="chart_div_fri"></div>
+
+	<h2>Sundays</h2>
+	<div id="chart_div_sun"></div>
+
+	<script>
+		google.load('visualization', '1', {packages: ['timeline']});
+		google.setOnLoadCallback(drawCharts);
+
+		function dateFromTime(h, m) {
+			var localToday = new Date();
+			var pacificToday = new Date(Date.UTC(
+				localToday.getFullYear(),
+				localToday.getMonth(),
+				localToday.getDate(),
+				h + 8,
+				m
+				));
+			return pacificToday;
+		}
+
+		function drawCharts() {
+			var data = {};
+
+			data.mon = google.visualization.arrayToDataTable([
+				['Activity', 'Start Time', 'End Time'],
+				['andym',
+				dateFromTime(6, 0),
+				dateFromTime(9, 0)],
+				['noit',
+				dateFromTime(6, 0),
+				dateFromTime(22, 0)],
+				['spoji',
+				dateFromTime(5, 30),
+				dateFromTime(10, 30)],
+				['rhelmer',
+				dateFromTime(9, 0),
+				dateFromTime(12, 0)],
+				['santosh',
+				dateFromTime(-3, 30),
+				dateFromTime(6, 30)],
+				]);
+
+			data.tue = google.visualization.arrayToDataTable([
+				['Activity', 'Start Time', 'End Time'],
+				['jorgev',
+				dateFromTime(7, 0),
+				dateFromTime(15, 0)],
+				['noit',
+				dateFromTime(6, 0),
+				dateFromTime(22, 0)],
+				['spoji',
+				dateFromTime(5, 30),
+				dateFromTime(10, 30)],
+				['rhelmer',
+				dateFromTime(9, 0),
+				dateFromTime(12, 0)],
+				['santosh',
+				dateFromTime(-3, 30),
+				dateFromTime(6, 30)],
+				['vng',
+				dateFromTime(-3, 0),
+				dateFromTime(2, 0)],
+				['anu',
+				dateFromTime(4, 0),
+				dateFromTime(6, 0)],
+				['chuck',
+				dateFromTime(9, 0),
+				dateFromTime(12, 0)],
+				]);
+
+			data.wed = google.visualization.arrayToDataTable([
+				['Activity', 'Start Time', 'End Time'],
+				['fallen',
+				dateFromTime(4, 0),
+				dateFromTime(6, 0)],
+				['noit',
+				dateFromTime(6, 0),
+				dateFromTime(22, 0)],
+				['spoji',
+				dateFromTime(5, 30),
+				dateFromTime(10, 30)],
+				['santosh',
+				dateFromTime(-3, 30),
+				dateFromTime(6, 30)],
+				['anu',
+				dateFromTime(4, 0),
+				dateFromTime(6, 0)],
+				['chuck',
+				dateFromTime(9, 0),
+				dateFromTime(12, 0)],
+				]);
+
+			data.thu = google.visualization.arrayToDataTable([
+				['Activity', 'Start Time', 'End Time'],
+				['andym',
+				dateFromTime(6, 0),
+				dateFromTime(9, 0)],
+				['noit',
+				dateFromTime(6, 0),
+				dateFromTime(22, 0)],
+				['spoji',
+				dateFromTime(5, 30),
+				dateFromTime(10, 30)],
+				['rhelmer',
+				dateFromTime(9, 0),
+				dateFromTime(12, 0)],
+				['santosh',
+				dateFromTime(-3, 30),
+				dateFromTime(6, 30)],
+				['chuck',
+				dateFromTime(9, 0),
+				dateFromTime(12, 0)],
+				]);
+
+			data.fri = google.visualization.arrayToDataTable([
+				['Activity', 'Start Time', 'End Time'],
+				['andym',
+				dateFromTime(6, 0),
+				dateFromTime(9, 0)],
+				['noit',
+				dateFromTime(6, 0),
+				dateFromTime(22, 0)],
+				['spoji',
+				dateFromTime(5, 30),
+				dateFromTime(10, 30)],
+				['rhelmer',
+				dateFromTime(9, 0),
+				dateFromTime(12, 0)],
+				['vng',
+				dateFromTime(-3, 0),
+				dateFromTime(2, 0)],
+				]);
+
+			data.sun = google.visualization.arrayToDataTable([
+				['Activity', 'Start Time', 'End Time'],
+				['noit',
+				dateFromTime(6, 0),
+				dateFromTime(22, 0)],
+				]);
+
+			var options = {
+				height: 280,
+			};
+
+			for (day in data) {
+				var chart = new google.visualization.Timeline(document.getElementById('chart_div_' + day));
+				chart.draw(data[day], options);
+			}
+
+		}
+
+	</script>
+
+</body>
+</html>
